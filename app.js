@@ -1,5 +1,6 @@
 const path = require('path');
-const dotenv = require('dotenv'); 
+const dotenv = require('dotenv');
+
 dotenv.config({
 	path: path.resolve(__dirname+'/enviroment', process.env.NODE_ENV + '.env')
   });
@@ -12,7 +13,6 @@ function Servidor(petic, resp) {
 	resp.end();
 }
 server.on('request', Servidor);
-console.log(__dirname, process.env.NODE_ENV + '.env');
 server.listen(process.env.PORT, function () {
   	console.log('La Aplicación está funcionando en el puerto ' + process.env.PORT);
 });
