@@ -1,13 +1,14 @@
  
 'use strict';
 const mysql = require('mysql');
+const dotenv = require('dotenv'); 
  
 // Conexión a la base de datos 
 const con = mysql.createConnection({
-  host     : 'localhost', // Host
-  user     : 'root',      // Usuario 
-  password : '',          // Password  
-  database : 'atencion_al_usuario' // Base de datos 
+  host     : process.env.DB_HOST,       // Host
+  user     : process.env.DB_USER,       // Usuario 
+  password : process.env.DB_PASSWORD,   // Password  
+  database : process.env.DB_NAME        // Base de datos 
 });
  
 // Realizamos la conexión 
